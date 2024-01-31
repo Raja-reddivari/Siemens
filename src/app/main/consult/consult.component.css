@@ -1,0 +1,61 @@
+.container {
+  margin: 10px;
+}
+
+.consult-details {
+  height: 300px;
+  border: 1px solid grey;
+}
+
+.chart-details {
+  height: 620px;
+  border: 1px solid grey;
+}
+
+input {
+  border: 1px solid black;
+  border-radius: 0px;
+}
+
+.flex-row-reverse {
+  margin-left: 90px;
+}
+
+.btn-add,
+.btn-reset {
+  height: 35px;
+  width: 80px;
+}
+.btn-add {
+  background-color: orange;
+}
+
+.btn-reset {
+  background-color: lightgray;
+}
+
+table {
+  border: 2px solid rgb(151, 188, 91);
+}
+
+table tr th {
+  background-color: rgb(151, 188, 91);
+}
+
+table tr:nth-child(even) td {
+  background-color: rgb(175, 194, 143);
+}
+
+.list {
+  height: 36px;
+  width: 208px;
+}
+
+.custom-dropdown {
+  padding: 5px;
+  width: 210px;
+}
+
+.chart-label {
+  padding: 10px;
+}

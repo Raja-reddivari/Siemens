@@ -25,3 +25,15 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Steps to Run the code
+
+1. Import the shared folder on the vscode.
+2. Run `npm install` from src folder (As i have removed node_modules from the folder to reduce the size)
+3. Run `ng serve`
+
+If you get get issue related to node version please down grade the version :
+if you already installed nvm then use below commands to install and use.
+Install - `nvm install v(version_number)`
+Use - `nvm use v(version_name)`
+and then run `export NODE_OPTIONS=--openssl-legacy-provider` this will fix the node version issue.

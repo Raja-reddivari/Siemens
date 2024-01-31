@@ -1,0 +1,125 @@
+<div class="container">
+  <div class="consult">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="consult-details">
+          <form [formGroup]="ConsultationForm">
+            <div class="row">
+              <div class="col-sm-5">
+                <div class="form-group m-3">
+                  <input
+                    type="text"
+                    formControlName="patientName"
+                    class="form-control"
+                    placeholder="Patient Name"
+                  />
+                </div>
+                <div class="form-group m-3">
+                  <input
+                    type="text"
+                    formControlName="physicianName"
+                    class="form-control"
+                    placeholder="Physician Name"
+                  />
+                </div>
+                <div class="form-group m-3 custom-dropdown">
+                  <mat-form-field>
+                    <mat-label>Prescribed Test</mat-label>
+                    <mat-select
+                      multiple
+                      formControlName="prescribedTest"
+                      class="custom-dropdown"
+                    >
+                      <mat-option
+                        *ngFor="let test of prescribedTests"
+                        [value]="test.viewValue"
+                      >
+                        {{ test.viewValue }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="col-sm-5">
+                <div class="form-group m-3">
+                  <input
+                    type="number"
+                    formControlName="age"
+                    class="form-control"
+                    placeholder="Age"
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="me-1">Female</label>
+                  <input
+                    type="radio"
+                    name="gender"
+                    value="female"
+                    formControlName="gender"
+                  />
+
+                  <label class="ms-1 me-1">Male </label>
+                  <input
+                    type="radio"
+                    name="gender"
+                    value="male"
+                    formControlName="gender"
+                  />
+
+                  <label class="ms-1 me-1">Others</label>
+                  <input
+                    type="radio"
+                    name="gender"
+                    value="others"
+                    formControlName="gender"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="d-flex flex-row-reverse justify-content-center">
+                <div class="p-2">
+                  <button class="btn-reset" (click)="reset()">Reset</button>
+                </div>
+                <div class="p-2">
+                  <button class="btn-add" (click)="add()">Add</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="consult-details mt-3">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Patient Name</th>
+                <th>Physician Name</th>
+                <th>Prescribed Test</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let patient of patientdetails">
+                <td>{{ patient.patientName }}</td>
+                <td>{{ patient.physicianName }}</td>
+                <td>{{ patient.prescribedTest }}</td>
+              </tr>
+              <tr *ngFor="let data of tableData">
+                <td>{{ data.patientName }}</td>
+                <td>{{ data.physicianName }}</td>
+                <td>{{ data.prescribedTest }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="chart-details me-3">
+          <div>
+            <p class="chart-label">Test Share</p>
+            <div id="chartdiv" style="width: 100%; height: 500px"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

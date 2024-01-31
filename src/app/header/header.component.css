@@ -1,0 +1,11 @@
+img {
+  height: 80px;
+  width: 265px;
+}
+.btn-logout {
+  border: none;
+  background-color: white;
+  margin-right: 40px;
+  margin-top: 20px;
+  border: none;
+}

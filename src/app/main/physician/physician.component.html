@@ -1,0 +1,116 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="physician-details">
+        <form [formGroup]="physicianForm">
+          <div class="row">
+            <div class="col-sm-5">
+              <div class="form-group m-3">
+                <input
+                  type="text"
+                  formControlName="physicianName"
+                  [(ngModel)]="selectedUser.physicianName"
+                  class="form-control"
+                  placeholder="Physician Name"
+                  readonly
+                />
+              </div>
+              <div class="form-group m-3">
+                <div class="form-group">
+                  <select
+                    formControlName="specialization"
+                    [(ngModel)]="selectedUser.specialization"
+                    class="list"
+                  >
+                    <option value="" disabled selected>specialization</option>
+                    <option value="General Medicine">General Medicine</option>
+                    <option value="General Physician">General Physician</option>
+                    <option value="Pediatrics">Pediatrics</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group m-3">
+                <input
+                  type="text"
+                  formControlName="qualification"
+                  [(ngModel)]="selectedUser.qualification"
+                  class="form-control"
+                  placeholder="Qualification"
+                />
+              </div>
+            </div>
+            <div class="col-sm-5">
+              <div class="form-group m-3">
+                <input
+                  type="number"
+                  formControlName="age"
+                  class="form-control"
+                  placeholder="Age"
+                />
+              </div>
+              <div class="form-group">
+                <label class="me-1">Female</label>
+                <input
+                  type="radio"
+                  name="gender"
+                  value="female"
+                  formControlName="gender"
+                />
+
+                <label class="ms-1 me-1">Male </label>
+                <input
+                  type="radio"
+                  name="gender"
+                  value="male"
+                  formControlName="gender"
+                />
+
+                <label class="ms-1 me-1">Others</label>
+                <input
+                  type="radio"
+                  name="gender"
+                  value="others"
+                  formControlName="gender"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="d-flex flex-row-reverse justify-content-center">
+              <div class="p-2">
+                <button class="btn-reset" (click)="reset()">Reset</button>
+              </div>
+              <div class="p-2">
+                <button class="btn-update" (click)="update()">Update</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="row m-3">
+    <div class="consult-details">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>PhysicianName</th>
+            <th>Specialization</th>
+            <th>Qualification</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="let user of users"
+            (click)="selectUser(user)"
+            [class.selected]="user === selectedUser"
+          >
+            <td>{{ user.physicianName }}</td>
+            <td>{{ user.specialization }}</td>
+            <td>{{ user.qualification }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+.tab-section {
+  border: 1px solid gray;
+  margin: 10px;
+}
+
+.btn-group {
+  margin-left: 10px;
+}
+.btn-group button {
+  border-radius: 0px;
+}
+
+.btn-consult button {
+  color: black;
+  background-color: orange;
+}
+
+.btn-physician button {
+  color: black;
+  background-color: lightgray;
+}
